@@ -1,0 +1,349 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: #f8f9fa;
+}
+
+
+/* Header and Navigation */
+
+header {
+    background-color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.navbar {
+    height: 70px;
+
+    padding: 0 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #6c63ff;
+}
+
+.nav-links {
+    display: flex;
+
+    list-style: none;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #222;
+
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+.menu-btn {
+    display: none;
+
+    font-size: 25px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+}
+
+
+/* Home / Hero Section */
+
+.hero {
+    min-height: 600px;
+
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #eeeeff,
+        #ffffff
+    );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: #6c63ff;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #6c63ff;
+}
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #5148d9;
+}
+
+
+/* Common Section */
+
+section {
+    padding: 80px 8%;
+}
+
+section h2 {
+    text-align: center;
+
+    font-size: 36px;
+
+    margin-bottom: 30px;
+}
+
+
+/* About Section */
+
+.about {
+    background-color: white;
+
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+
+    margin: 15px auto;
+
+    line-height: 1.8;
+}
+
+
+/* Skills Section */
+
+.skills-section {
+    background-color: #f8f9fa;
+}
+
+.skills-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    width: 280px;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+    color: #6c63ff;
+
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    line-height: 1.6;
+}
+
+
+/* Education Section */
+
+.education {
+    background-color: white;
+}
+
+.education-card {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    padding: 25px;
+
+    border-left: 5px solid #6c63ff;
+
+    background-color: #f8f9fa;
+}
+
+.education-card h3 {
+    color: #6c63ff;
+
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    line-height: 1.6;
+}
+
+
+/* Contact Section */
+
+.contact {
+    background-color: #eeeeff;
+}
+
+form {
+    max-width: 600px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #222;
+
+    color: white;
+
+    line-height: 1.8;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        background-color: white;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+
+}
