@@ -1,210 +1,42 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+// Mobile Navigation Menu
 
-body {
-    font-family: Arial, sans-serif;
-    color: #222;
-    background-color: #f8f9fa;
-}
+const menuBtn = document.getElementById("menuBtn");
 
-/* Home / Navbar */
-.home {
-    background-color: #ffffff;
-}
+const navLinks = document.getElementById("navLinks");
 
-.navbar {
-    height: 70px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.logo {
-    font-size: 26px;
-}
+menuBtn.addEventListener("click", function () {
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
+    navLinks.classList.toggle("active");
 
-.nav-links a {
-    text-decoration: none;
-    color: #222;
-    font-weight: bold;
-}
+});
 
-.nav-links a:hover {
-    color: #6c63ff;
-}
 
-.menu-btn {
-    display: none;
-    font-size: 25px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
+// Close menu when a navigation link is clicked
 
-/* Hero Section */
-.hero {
-    min-height: 600px;
-    padding: 100px 8%;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #eeeeff, #ffffff);
-}
+const links = document.querySelectorAll(".nav-links a");
 
-.hero-content {
-    max-width: 650px;
-}
+links.forEach(function (link) {
 
-.welcome {
-    color: #6c63ff;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
+    link.addEventListener("click", function () {
 
-.hero h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
-}
+        navLinks.classList.remove("active");
 
-.hero h1 span {
-    color: #6c63ff;
-}
+    });
 
-.hero p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
+});
 
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: #6c63ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
 
-.btn:hover {
-    background-color: #5148d9;
-}
+// Contact Form
 
-/* About Section */
-.about {
-    padding: 100px 8%;
-    background-color: white;
-}
+const contactForm = document.getElementById("contactForm");
 
-.about-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 80px;
-}
+contactForm.addEventListener("submit", function (event) {
 
-.about-image {
-    flex: 1;
-    text-align: center;
-}
+    event.preventDefault();
 
-.profile-circle {
-    width: 250px;
-    height: 250px;
-    margin: auto;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #6c63ff;
-    color: white;
-    font-size: 60px;
-    font-weight: bold;
-}
+    alert("Thank you! Your message has been submitted.");
 
-.about-content {
-    flex: 1;
-}
+    contactForm.reset();
 
-.about-content h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.skills {
-    display: flex;
-    gap: 10px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-}
-
-.skills span {
-    padding: 10px 18px;
-    background-color: #eeeeff;
-    color: #6c63ff;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #222;
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        padding: 20px;
-        flex-direction: column;
-        text-align: center;
-        background-color: white;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .skills {
-        justify-content: center;
-    }
-}
+});
