@@ -1,80 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+
+    <title>Hema Varshini | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Home Section -->
-    <header class="home" id="home">
+    <!-- Header and Navigation -->
+    <header>
+
         <nav class="navbar">
-            <h2 class="logo">MyWebsite</h2>
+
+            <h2 class="logo">Hema Varshini</h2>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#hero">Hero</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
             <button class="menu-btn" id="menuBtn">☰</button>
+
         </nav>
+
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="welcome">WELCOME TO MY WEBSITE</p>
 
-            <h1>Hi, I'm <span>Hema Varshini</span></h1>
+    <!-- Main Content -->
+    <main>
+
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>
+                    Hi, I'm <span>Hema Varshini</span>
+                </h1>
+
+                <p>
+                    I am learning web development and building creative,
+                    responsive websites using HTML, CSS, and JavaScript.
+                </p>
+
+                <a href="#about" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="about">
+
+            <h2>About Me</h2>
 
             <p>
-                I am learning web development and building creative,
-                responsive websites using HTML, CSS, and JavaScript.
+                Hello! I am passionate about technology and web development.
+                I enjoy learning new skills and creating beautiful websites.
             </p>
 
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-    </section>
+            <p>
+                Currently, I am improving my frontend development skills
+                by learning HTML, CSS, and JavaScript.
+            </p>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
+        </section>
 
-            <div class="about-image">
-                <div class="profile-circle">HV</div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+
+            <h2>My Skills</h2>
+
+            <div class="skills-container">
+
+                <article class="skill-card">
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Creating structured and semantic web pages.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Designing responsive and attractive websites.
+                    </p>
+
+                </article>
+
+
+                <article class="skill-card">
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Adding interactivity and functionality to websites.
+                    </p>
+
+                </article>
+
             </div>
 
-            <div class="about-content">
-                <h2>About Me</h2>
+        </section>
+
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+
+            <h2>Education</h2>
+
+            <article class="education-card">
+
+                <h3>Bachelor's Degree</h3>
 
                 <p>
-                    Hello! I am passionate about technology and web development.
-                    I enjoy learning new skills and creating beautiful websites.
+                    Currently pursuing my degree and developing my
+                    technical and programming skills.
                 </p>
+
+            </article>
+
+
+            <article class="education-card">
+
+                <h3>Web Development Learning</h3>
 
                 <p>
-                    Currently, I am learning HTML, CSS, and JavaScript to improve
-                    my frontend development skills.
+                    Learning HTML, CSS, JavaScript, Git, and GitHub
+                    through hands-on projects.
                 </p>
 
-                <div class="skills">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-            </div>
+            </article>
 
-        </div>
-    </section>
+        </section>
 
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+
+            <h2>Contact Me</h2>
+
+            <form id="contactForm">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Enter your message"
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 MyWebsite. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Hema Varshini. All Rights Reserved.
+        </p>
+
+        <p>
+            Built with HTML, CSS, and JavaScript.
+        </p>
+
     </footer>
 
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
