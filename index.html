@@ -7,200 +7,155 @@
 
     <title>Hema Varshini | Portfolio</title>
 
+    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header and Navigation -->
+    <!-- Navigation Bar -->
     <header>
+        <nav>
+            <div class="logo">Hema Varshini</div>
 
-        <nav class="navbar">
-
-            <h2 class="logo">Hema Varshini</h2>
-
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
-            <button class="menu-btn" id="menuBtn">☰</button>
-
         </nav>
-
     </header>
 
 
-    <!-- Main Content -->
-    <main>
+    <!-- Home Section -->
+    <section id="home" class="hero">
 
-        <!-- Home / Hero Section -->
-        <section id="home" class="hero">
+        <div class="hero-content">
 
-            <div class="hero-content">
+            <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+            <h1>
+                Hi, I'm <span>Hema Varshini</span>
+            </h1>
 
-                <h1>
-                    Hi, I'm <span>Hema Varshini</span>
-                </h1>
-
-                <p>
-                    I am learning web development and building creative,
-                    responsive websites using HTML, CSS, and JavaScript.
-                </p>
-
-                <a href="#about" class="btn">
-                    Learn More
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- About Section -->
-        <section id="about" class="about">
-
-            <h2>About Me</h2>
-
-            <p>
-                Hello! I am passionate about technology and web development.
-                I enjoy learning new skills and creating beautiful websites.
+            <p class="description">
+                Computer Science Student | Web Developer | Tech Enthusiast
             </p>
 
+            <a href="#about" class="btn">
+                Explore My Portfolio
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <h2>About Me</h2>
+
+        <div class="about-content">
+
             <p>
-                Currently, I am improving my frontend development skills
-                by learning HTML, CSS, and JavaScript.
+                I am a passionate Computer Science student interested in
+                web development, programming, and emerging technologies.
+                I enjoy learning new skills and building creative projects
+                using modern technologies.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
 
-            <h2>My Skills</h2>
+        <h2>My Skills</h2>
 
-            <div class="skills-container">
+        <div class="skills-container">
 
-                <article class="skill-card">
-
-                    <h3>HTML</h3>
-
-                    <p>
-                        Creating structured and semantic web pages.
-                    </p>
-
-                </article>
-
-
-                <article class="skill-card">
-
-                    <h3>CSS</h3>
-
-                    <p>
-                        Designing responsive and attractive websites.
-                    </p>
-
-                </article>
-
-
-                <article class="skill-card">
-
-                    <h3>JavaScript</h3>
-
-                    <p>
-                        Adding interactivity and functionality to websites.
-                    </p>
-
-                </article>
-
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating the structure of web pages.</p>
             </div>
 
-        </section>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Designing beautiful and responsive websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Adding interaction and functionality.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Programming and problem solving.</p>
+            </div>
+
+        </div>
+
+    </section>
 
 
-        <!-- Education Section -->
-        <section id="education" class="education">
+    <!-- Education Section -->
+    <section id="education" class="education section">
 
-            <h2>Education</h2>
+        <h2>Education</h2>
 
-            <article class="education-card">
+        <div class="education-card">
 
-                <h3>Bachelor's Degree</h3>
+            <h3>MSc Computer Science</h3>
 
-                <p>
-                    Currently pursuing my degree and developing my
-                    technical and programming skills.
-                </p>
+            <p>
+                Currently pursuing my Master's degree in Computer Science.
+            </p>
 
-            </article>
+        </div>
 
-
-            <article class="education-card">
-
-                <h3>Web Development Learning</h3>
-
-                <p>
-                    Learning HTML, CSS, JavaScript, Git, and GitHub
-                    through hands-on projects.
-                </p>
-
-            </article>
-
-        </section>
+    </section>
 
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
 
-            <h2>Contact Me</h2>
+        <h2>Contact Me</h2>
 
-            <form id="contactForm">
+        <form id="contactForm" class="contact-form">
 
-                <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
 
+            <textarea
+                id="message"
+                placeholder="Enter your message"
+                required
+            ></textarea>
 
-                <label for="email">Email</label>
+            <button type="submit" class="btn">
+                Send Message
+            </button>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                >
+        </form>
 
-
-                <label for="message">Message</label>
-
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Enter your message"
-                    required
-                ></textarea>
-
-
-                <button type="submit" class="btn">
-                    Send Message
-                </button>
-
-            </form>
-
-        </section>
-
-    </main>
+    </section>
 
 
     <!-- Footer -->
@@ -210,13 +165,10 @@
             © 2026 Hema Varshini. All Rights Reserved.
         </p>
 
-        <p>
-            Built with HTML, CSS, and JavaScript.
-        </p>
-
     </footer>
 
 
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 
 </body>
