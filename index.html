@@ -1,338 +1,563 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #7c3aed;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: #7c3aed;
+}
+
+
+/* =========================
+   HOME SECTION
+========================= */
+
+.home {
+    min-height: 90vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.home-content {
+    flex: 1;
+}
+
+.small-title {
+    color: #7c3aed;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.home h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.home h1 span {
+    color: #7c3aed;
+}
 
-    <title>Hema Varshini | Web Developer</title>
+.home-description {
+    max-width: 550px;
+    color: #64748b;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 13px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+.primary-btn {
+    background: #7c3aed;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #6d28d9;
+}
+
+.secondary-btn {
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+}
+
+.secondary-btn:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.home-card {
+    width: 320px;
+    min-height: 320px;
+
+    background: #ede9fe;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.profile-circle {
+    width: 140px;
+    height: 140px;
+
+    background: #7c3aed;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.home-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.home-card p {
+    color: #64748b;
+}
 
-<body>
+
+/* =========================
+   COMMON SECTION
+========================= */
 
-    <!-- Navigation -->
-    <header class="header">
+.section {
+    padding: 90px 30px;
+}
 
-        <nav class="navbar">
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-            <a href="#home" class="logo">
-                HV<span>.</span>
-            </a>
+.section-heading p {
+    color: #7c3aed;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
-            <ul class="nav-menu">
+.section-heading h2 {
+    font-size: 40px;
+    margin-top: 10px;
+}
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+/* =========================
+   ABOUT - FLEXBOX
+========================= */
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
+.about {
+    background: white;
+}
 
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+.about-layout {
+    max-width: 1000px;
+    margin: auto;
 
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
 
-            </ul>
+.about-main {
+    flex: 2;
+}
 
-        </nav>
+.about-main h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
 
-    </header>
+.about-main p {
+    color: #64748b;
+    font-size: 18px;
+}
 
+.about-info {
+    flex: 1;
 
-    <!-- Home -->
-    <main>
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        <section id="home" class="home">
+.info-item {
+    padding: 18px;
+    border-left: 4px solid #7c3aed;
+    background: #f8fafc;
+}
 
-            <div class="home-content">
+.info-item strong,
+.info-item span {
+    display: block;
+}
 
-                <p class="small-title">
-                    HELLO, I'M
-                </p>
+.info-item strong {
+    margin-bottom: 5px;
+}
 
-                <h1>
-                    Hema <span>Varshini</span>
-                </h1>
+.info-item span {
+    color: #64748b;
+}
 
-                <p class="home-description">
-                    A Computer Science student passionate about
-                    web development and technology.
-                </p>
 
-                <div class="home-buttons">
+/* =========================
+   SKILLS - CSS GRID
+========================= */
 
-                    <a href="#projects" class="primary-btn">
-                        View Projects
-                    </a>
+.skills-layout {
+    max-width: 1000px;
+    margin: auto;
 
-                    <a href="#contact" class="secondary-btn">
-                        Contact Me
-                    </a>
+    display: grid;
 
-                </div>
+    grid-template-columns: repeat(4, 1fr);
 
-            </div>
+    gap: 20px;
+}
 
-            <div class="home-card">
+.skill-box {
+    min-height: 230px;
 
-                <div class="profile-circle">
-                    HV
-                </div>
+    padding: 25px;
 
-                <h3>
-                    Web Developer
-                </h3>
+    background: white;
 
-                <p>
-                    Learning. Creating. Growing.
-                </p>
+    border-radius: 12px;
 
-            </div>
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-        </section>
+    border-top: 5px solid #7c3aed;
 
+    transition: transform 0.3s;
+}
 
-        <!-- About -->
-        <section id="about" class="about section">
+.skill-box:hover {
+    transform: translateY(-10px);
+}
 
-            <div class="section-heading">
+.skill-number {
+    color: #94a3b8;
+    font-weight: bold;
+}
 
-                <p>GET TO KNOW ME</p>
+.skill-box h3 {
+    font-size: 25px;
+}
 
-                <h2>About Me</h2>
+.skill-box p {
+    color: #64748b;
+}
 
-            </div>
 
-            <div class="about-layout">
+/* =========================
+   PROJECTS - CSS GRID
+========================= */
 
-                <div class="about-main">
+.projects {
+    background: white;
+}
 
-                    <h3>
-                        Building my skills one project at a time.
-                    </h3>
+.project-grid {
+    max-width: 1100px;
+    margin: auto;
 
-                    <p>
-                        I am a Computer Science student who enjoys
-                        learning programming and web technologies.
-                        I am interested in creating websites and
-                        applications that are simple, useful, and
-                        user-friendly.
-                    </p>
+    display: grid;
 
-                </div>
+    grid-template-columns: repeat(3, 1fr);
 
-                <div class="about-info">
+    gap: 25px;
+}
 
-                    <div class="info-item">
-                        <strong>Education</strong>
-                        <span>MSc Computer Science</span>
-                    </div>
+.project-card {
+    padding: 30px;
 
-                    <div class="info-item">
-                        <strong>Interest</strong>
-                        <span>Web Development</span>
-                    </div>
+    border: 1px solid #e2e8f0;
 
-                    <div class="info-item">
-                        <strong>Learning</strong>
-                        <span>HTML, CSS & JavaScript</span>
-                    </div>
+    border-radius: 12px;
 
-                </div>
+    background: #ffffff;
 
-            </div>
+    transition: 0.3s;
+}
 
-        </section>
+.project-card:hover {
+    transform: translateY(-8px);
 
+    box-shadow: 0 10px 25px
+        rgba(0, 0, 0, 0.08);
+}
 
-        <!-- Skills -->
-        <section id="skills" class="skills section">
+.project-card span {
+    color: #7c3aed;
+    font-weight: bold;
+}
 
-            <div class="section-heading">
+.project-card h3 {
+    margin: 20px 0 12px;
+}
 
-                <p>WHAT I KNOW</p>
+.project-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
 
-                <h2>My Skills</h2>
+.project-card a {
+    color: #7c3aed;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-            </div>
 
-            <div class="skills-layout">
+/* =========================
+   CONTACT
+========================= */
 
-                <div class="skill-box html">
-                    <span class="skill-number">01</span>
-                    <h3>HTML</h3>
-                    <p>Creating structured web pages.</p>
-                </div>
+.contact {
+    background: #f1f5f9;
+}
 
-                <div class="skill-box css">
-                    <span class="skill-number">02</span>
-                    <h3>CSS</h3>
-                    <p>Designing attractive layouts.</p>
-                </div>
+.contact-form {
+    max-width: 800px;
+    margin: auto;
 
-                <div class="skill-box javascript">
-                    <span class="skill-number">03</span>
-                    <h3>JavaScript</h3>
-                    <p>Adding functionality to websites.</p>
-                </div>
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-                <div class="skill-box python">
-                    <span class="skill-number">04</span>
-                    <h3>Python</h3>
-                    <p>Solving problems with programming.</p>
-                </div>
+.form-row {
+    display: flex;
+    gap: 20px;
+}
 
-            </div>
+.form-row input {
+    flex: 1;
+}
 
-        </section>
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
 
+    padding: 16px;
 
-        <!-- Projects -->
-        <section id="projects" class="projects section">
+    border: 1px solid #cbd5e1;
 
-            <div class="section-heading">
+    border-radius: 6px;
 
-                <p>MY WORK</p>
+    font-size: 16px;
 
-                <h2>Projects</h2>
+    outline: none;
+}
 
-            </div>
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #7c3aed;
+}
 
-            <div class="project-grid">
+.contact-form textarea {
+    height: 160px;
+    resize: vertical;
+}
 
-                <article class="project-card">
+.contact-form button {
+    align-self: center;
 
-                    <span>01</span>
+    padding: 14px 30px;
 
-                    <h3>Personal Portfolio</h3>
+    background: #7c3aed;
 
-                    <p>
-                        A responsive portfolio website
-                        created using HTML and CSS.
-                    </p>
+    color: white;
 
-                    <a href="#contact">
-                        Learn More →
-                    </a>
+    border: none;
 
-                </article>
+    border-radius: 6px;
 
+    font-weight: bold;
 
-                <article class="project-card">
+    cursor: pointer;
+}
 
-                    <span>02</span>
+.contact-form button:hover {
+    background: #6d28d9;
+}
 
-                    <h3>Student Project</h3>
 
-                    <p>
-                        A project created to improve
-                        programming and development skills.
-                    </p>
+/* =========================
+   FOOTER
+========================= */
 
-                    <a href="#contact">
-                        Learn More →
-                    </a>
+footer {
+    padding: 25px;
 
-                </article>
+    background: #0f172a;
 
+    color: white;
 
-                <article class="project-card">
+    text-align: center;
+}
 
-                    <span>03</span>
+footer p:first-child {
+    margin-bottom: 5px;
+}
 
-                    <h3>Web Design Practice</h3>
 
-                    <p>
-                        Practicing responsive layouts
-                        using Flexbox and CSS Grid.
-                    </p>
+/* =========================
+   TABLET RESPONSIVE
+========================= */
 
-                    <a href="#contact">
-                        Learn More →
-                    </a>
+@media (max-width: 900px) {
 
-                </article>
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            </div>
+    .home-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        </section>
+    .home-buttons {
+        justify-content: center;
+    }
 
+    .skills-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        <!-- Contact -->
-        <section id="contact" class="contact section">
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-            <div class="section-heading">
+    .about-layout {
+        flex-direction: column;
+    }
 
-                <p>LET'S CONNECT</p>
+}
 
-                <h2>Contact Me</h2>
 
-            </div>
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
-            <form id="contactForm" class="contact-form">
+@media (max-width: 600px) {
 
-                <div class="form-row">
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Your Name"
-                        required
-                    >
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Your Email"
-                        required
-                    >
+    .home h1 {
+        font-size: 42px;
+    }
 
-                </div>
+    .home-card {
+        width: 100%;
+    }
 
-                <textarea
-                    id="message"
-                    placeholder="Write your message..."
-                    required
-                ></textarea>
+    .skills-layout {
+        grid-template-columns: 1fr;
+    }
 
-                <button type="submit">
-                    Send Message
-                </button>
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 
-            </form>
+    .form-row {
+        flex-direction: column;
+    }
 
-        </section>
+    .section-heading h2 {
+        font-size: 32px;
+    }
 
-    </main>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <p>
-            © 2026 Hema Varshini
-        </p>
-
-        <p>
-            Designed and developed with HTML & CSS
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+}
