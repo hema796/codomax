@@ -1,315 +1,308 @@
-/* Google Font */
+// =======================================
+// PORTFOLIO JAVASCRIPT
+// =======================================
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+console.log("Welcome to Hemavarshini Portfolio");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+// =======================================
+// CONTACT FORM VALIDATION
+// =======================================
+
+const form = document.getElementById("contactForm");
+
+if(form){
+
+    form.addEventListener("submit",function(e){
+
+        e.preventDefault();
+
+        let valid = true;
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const messageError = document.getElementById("messageError");
+
+        // Clear Errors
+
+        nameError.textContent = "";
+        emailError.textContent = "";
+        messageError.textContent = "";
+
+        // Name Validation
+
+        if(name.value.trim() === ""){
+
+            nameError.textContent = "Please enter your name.";
+            valid = false;
+
+        }
+
+        // Email Validation
+
+        const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(email.value.trim() === ""){
+
+            emailError.textContent =
+            "Please enter your email.";
+
+            valid = false;
+
+        }
+
+        else if(!emailPattern.test(email.value.trim())){
+
+            emailError.textContent =
+            "Please enter a valid email.";
+
+            valid = false;
+
+        }
+
+        // Message Validation
+
+        if(message.value.trim() === ""){
+
+            messageError.textContent =
+            "Please enter your message.";
+
+            valid = false;
+
+        }
+
+        if(valid){
+
+            alert("Message Sent Successfully!");
+
+            form.reset();
+
+        }
+
+    });
+
 }
 
-html {
-    scroll-behavior: smooth;
-}
+// =======================================
+// SCROLL TO TOP BUTTON
+// =======================================
 
-body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    color: #333;
-}
+const topBtn =
+document.getElementById("topBtn");
 
-/* Navbar */
+window.addEventListener("scroll",function(){
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+    if(window.scrollY > 300){
 
-.navbar {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        topBtn.style.display = "block";
 
-.logo {
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 25px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffe600;
-}
-
-/* Hero Section */
-
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 10%;
-    color: white;
-}
-
-.hero-content h1 {
-    font-size: 60px;
-}
-
-.hero-content span {
-    color: #ffd700;
-}
-
-.hero-content h2 {
-    margin: 15px 0;
-}
-
-.hero-content p {
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.8;
-}
-
-/* Buttons */
-
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    margin: 10px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(45deg, #ff512f, #dd2476);
-    transition: 0.4s;
-}
-
-.btn2 {
-    background: linear-gradient(45deg, #11998e, #38ef7d);
-}
-
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Common Section */
-
-section {
-    padding: 100px 10%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 40px;
-    color: #6a11cb;
-    margin-bottom: 50px;
-}
-
-/* About */
-
-.about-container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Skills */
-
-.skills-container,
-.education-container,
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.skill-card,
-.education-card,
-.project-card,
-.experience-card {
-    padding: 25px;
-    border-radius: 20px;
-    color: white;
-    transition: 0.4s;
-}
-
-.skill-card:nth-child(1) {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-}
-
-.skill-card:nth-child(2) {
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-}
-
-.skill-card:nth-child(3) {
-    background: linear-gradient(135deg, #f6d365, #fda085);
-}
-
-.skill-card:nth-child(4) {
-    background: linear-gradient(135deg, #84fab0, #8fd3f4);
-}
-
-.skill-card:nth-child(5) {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
-}
-
-.skill-card:nth-child(6) {
-    background: linear-gradient(135deg, #30cfd0, #330867);
-}
-
-.education-card {
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-}
-
-.project-card {
-    background: linear-gradient(135deg, #fa709a, #fee140);
-}
-
-.experience-card {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-}
-
-.skill-card:hover,
-.education-card:hover,
-.project-card:hover,
-.experience-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Resume */
-
-#resume {
-    text-align: center;
-}
-
-/* Contact */
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.contact-info {
-    background: linear-gradient(135deg, #11998e, #38ef7d);
-    padding: 30px;
-    border-radius: 20px;
-    color: white;
-}
-
-.contact-info p {
-    margin: 15px 0;
-}
-
-.social-links a {
-    color: yellow;
-    text-decoration: none;
-    margin-right: 15px;
-}
-
-form {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: #6a11cb;
-}
-
-/* Footer */
-
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Scroll Top Button */
-
-#topBtn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-
-    width: 50px;
-    height: 50px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: linear-gradient(45deg, #ff512f, #dd2476);
-
-    color: white;
-    font-size: 24px;
-
-    cursor: pointer;
-    display: none;
-
-    transition: 0.4s;
-}
-
-#topBtn:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        flex-direction: column;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 15px;
+    else{
+
+        topBtn.style.display = "none";
+
     }
 
-    .hero-content h1 {
-        font-size: 40px;
-    }
+});
 
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
+topBtn.addEventListener("click",function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+// =======================================
+// ACTIVE NAVIGATION
+// =======================================
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",function(){
+
+    let current = "";
+
+    sections.forEach(function(section){
+
+        const sectionTop =
+        section.offsetTop - 120;
+
+        const sectionHeight =
+        section.offsetHeight;
+
+        if(
+
+            window.scrollY >= sectionTop &&
+            window.scrollY <
+            sectionTop + sectionHeight
+
+        ){
+
+            current = section.id;
+
+        }
+
+    });
+
+    navLinks.forEach(function(link){
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+// =======================================
+// SCROLL REVEAL ANIMATION
+// =======================================
+
+const revealItems = document.querySelectorAll(
+
+".about-text,.skill-card,.education-card,.project-card,.experience-card,.contact-info,#contactForm"
+
+);
+
+const observer = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform =
+            "translateY(0)";
+
+        }
+
+    });
+
+},
+
+{
+
+    threshold:0.2
+
 }
+
+);
+
+revealItems.forEach((item,index)=>{
+
+    item.style.opacity = "0";
+
+    item.style.transform =
+    "translateY(80px)";
+
+    item.style.transition =
+    `all 0.7s ease ${index*0.12}s`;
+
+    observer.observe(item);
+
+});
+
+// =======================================
+// HERO BUTTON ANIMATION
+// =======================================
+
+const buttons =
+document.querySelectorAll(".btn");
+
+buttons.forEach((btn)=>{
+
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.style.transform =
+        "translateY(-6px) scale(1.05)";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.transform =
+        "translateY(0) scale(1)";
+
+    });
+
+});
+
+// =======================================
+// LOGO ANIMATION
+// =======================================
+
+const logo = document.querySelector(".logo");
+
+if(logo){
+
+    logo.addEventListener("mouseenter",()=>{
+
+        logo.style.transform="rotate(-5deg) scale(1.1)";
+
+    });
+
+    logo.addEventListener("mouseleave",()=>{
+
+        logo.style.transform="rotate(0deg) scale(1)";
+
+    });
+
+}
+// =======================================
+// SECTION TITLE ANIMATION
+// =======================================
+
+const titles =
+document.querySelectorAll(".section-title");
+
+titles.forEach(title=>{
+
+    title.addEventListener("mouseenter",()=>{
+
+        title.style.letterSpacing = "3px";
+
+        title.style.transition = ".4s";
+
+    });
+
+    title.addEventListener("mouseleave",()=>{
+
+        title.style.letterSpacing = "0px";
+
+    });
+
+});
+
+// =======================================
+// FOOTER YEAR
+// =======================================
+
+const footer =
+document.getElementById("footerText");
+
+footer.innerHTML =
+
+`© ${new Date().getFullYear()} Hema s | All Rights Reserved`;
+
+console.log("Portfolio Loaded Successfully!");
